@@ -1,0 +1,91 @@
+:root {  
+
+    --font-family  : "FiraCode Nerd Font", sans-serif;  
+    --font-size    : 14px;  
+    --option-height: 2em;  
+    --border-radius: 12px;  
+    --hint-fg             : #DDD8BB;  
+    --hint-bg             : #1F1F28;  
+    --select-line         : #49473E;  
+    --status-border       : #00505080;  
+    --hintspan-active-bg  : #503000f0;  
+    --hintspan-inactive-bg: #005050f0;  
+    --hint-active-bg      : #50300008;  
+    --hint-inactive-bg    : #00505008;  
+
+    --tridactyl-font-family         : var(--font-family);  
+    --tridactyl-font-size           : var(--font-size);  
+
+    --tridactyl-status-font-family  : var(--font-family);  
+    --tridactyl-hintspan-font-family: var(--font-family);  
+    --tridactyl-cmdl-font-family    : var(--font-family);  
+    --tridactyl-cmplt-font-family   : var(--font-family);  
+    --tridactyl-header-font-family  : var(--font-family);  
+    --tridactyl-status-font-size    : var(--font-size);  
+    --tridactyl-hintspan-font-size  : var(--font-size);  
+    --tridactyl-cmdl-font-size      : var(--font-size);  
+    --tridactyl-cmplt-font-size     : var(--font-size);  
+    --tridactyl-header-font-size    : var(--font-size);  
+
+    --tridactyl-hintspan-font-weight: bold;  
+    --tridactyl-cmplt-option-height : var(--option-height);  
+    --tridactyl-border-radius       : var(--border-radius);  
+
+    --tridactyl-fg                    : var(--hint-fg);  
+    --tridactyl-bg                    : var(--hint-bg);  
+    --tridactyl-of-fg                 : var(--hint-fg);  
+    --tridactyl-of-bg                 : var(--select-line);  
+    --tridactyl-hintspan-active-fg    : var(--hint-fg);  
+    --tridactyl-hintspan-fg           : var(--hint-fg);  
+    --tridactyl-hint-active-fg        : var(--hint-fg);  
+
+    --tridactyl-hintspan-active-bg    : var(--hintspan-active-bg);  
+    --tridactyl-hintspan-bg           : var(--hintspan-inactive-bg);  
+    --tridactyl-hint-active-bg        : var(--hint-active-bg);  
+    --tridactyl-hint-bg               : var(--hint-inactive-bg);  
+    --tridactyl-status-border         : 1px solid var(--status-border);  
+    --tridactyl-hint-active-outline   : 1px solid var(--hintspan-active-bg);  
+    --tridactyl-hint-outline          : 1px solid var(--hintspan-inactive-bg);  
+    --tridactyl-hintspan-js-background: var(--select-line);  
+    /* --tridactyl-hintspan-active-bg : linear-gradient(0, #b08040 0, #f0f0c0 100%); */  
+    /* --tridactyl-hintspan-bg        : linear-gradient(0, #40b0b0 0, #c0f0f0 100%); */  
+
+}  
+
+:root.TridactylOwnNamespace      { scrollbar-width: thin; }  
+:root.TridactylOwnNamespace a    { color: #3b84ef; }  
+:root.TridactylOwnNamespace code { background-color: #2a333c; }  
+
+span.TridactylHint               { border-radius: var(--border-radius) !important; }  
+:root #completions               { border-radius: var(--border-radius) !important; }  
+
+span.TridactylHint               { box-shadow: #00000080 0 8px 16px 0 !important; }  
+:root #command-line-holder       { order: 1; background: #363644; }  
+:root #tridactyl-input           { width: 96%; padding: 1rem; background: #363644; color: var(--hint-fg);}  
+:root #tridactyl-colon::before   { content: ""; }  
+
+:root #cmdline_iframe {  
+    position: fixed !important;  
+    top     : 16% !important;  
+    left    : 18% !important;  
+    width   : 64% !important;  
+    filter  : drop-shadow(0px 0px 20px #000000) !important;  
+    border-radius: var(--border-radius) !important;
+    background-color: var(--hint-bg) !important;
+  }  
+
+:root #completions {  
+    border    : none !important;  
+    order     : 2;  
+    }  
+
+:root #completions > div {  
+    min-height: calc( 8 * var(--option-height));  
+    max-height: calc(16 * var(--option-height));  
+    }  
+
+:root #completions .sectionHeader    { height: 0px; font-size: 0px; }  
+:root #completions table             { table-layout: fixed; padding: 1rem; }  
+:root #completions table tr .title   { width: 32%; }  
+:root #completions tr .documentation { text-overflow: ellipsis; }  
+
