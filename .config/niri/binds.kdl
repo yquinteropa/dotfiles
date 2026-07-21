@@ -1,0 +1,74 @@
+binds {
+    Mod+H       { focus-column-left; }
+    Mod+J       { focus-window-down; }
+    Mod+K       { focus-window-up; }
+    Mod+L       { focus-column-right; }
+    Mod+U       { focus-workspace-down; }
+    Mod+I       { focus-workspace-up; }
+
+    Alt+H       { move-column-left; }
+    Alt+J       { move-window-down-or-to-workspace-down; }
+    Alt+K       { move-window-up-or-to-workspace-up; }
+    Alt+L       { move-column-right; }
+
+    Mod+R       { switch-preset-window-height; }
+    Mod+V       { switch-preset-column-width; }
+    Mod+Ctrl+R  { reset-window-height; }
+
+    Mod+M       { maximize-column; }
+    Mod+Alt+M   { fullscreen-window; }
+
+    Mod+F       { toggle-window-floating; }
+    Mod+Tab     { switch-focus-between-floating-and-tiling; }
+
+    Alt+Left    { set-column-width  "-10%"; }
+    Alt+Right   { set-column-width  "+10%"; }
+    Alt+Up      { set-window-height "-10%"; }
+    Alt+Down    { set-window-height "+10%"; }
+
+    Mod+1       { focus-workspace 1 ; }
+    Mod+2       { focus-workspace 2 ; }
+    Mod+3       { focus-workspace 3 ; }
+    Mod+4       { focus-workspace 4 ; }
+    Mod+5       { focus-workspace 5 ; }
+    Mod+Ctrl+1  { move-column-to-workspace 1; }
+    Mod+Ctrl+2  { move-column-to-workspace 2; }
+    Mod+Ctrl+3  { move-column-to-workspace 3; }
+    Mod+Ctrl+4  { move-column-to-workspace 4; }
+    Mod+Ctrl+5  { move-column-to-workspace 5; }
+
+    Mod+T       { toggle-column-tabbed-display; }
+    Mod+C       { center-column; }
+    Mod+Ctrl+C  { center-visible-columns; }
+    Mod+Ctrl+E  { quit; }
+    Mod+Ctrl+H  { show-hotkey-overlay; }
+
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma   { consume-window-into-column; }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period  { expel-window-from-column  ; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left ; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+O         repeat=false  { toggle-overview; }
+    Mod+BackSpace repeat=false  { close-window   ; }
+
+    // Core Noctalia binds
+    Mod+S         repeat=false  { spawn-sh "noctalia msg panel-toggle session"  ; }   
+    Mod+Space     repeat=false  { spawn-sh "noctalia msg panel-toggle launcher" ; }
+    Mod+W         repeat=false  { spawn-sh "noctalia msg panel-toggle wallpaper"; }   
+    Mod+Semicolon repeat=false  { spawn-sh "noctalia msg panel-toggle control-center"; }   
+
+    // Audio & Brightness
+    XF86AudioRaiseVolume    { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume    { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute           { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp     { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown   { spawn-sh "noctalia msg brightness-down"; }
+
+    Mod+Return              { spawn "kitty"; }
+    Mod+B                   { spawn "firefox"; }
+    Mod+N                   { spawn "obsidian"; }
+    Mod+E                   { spawn-sh "kitty yazi"; }
+}

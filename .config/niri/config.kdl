@@ -1,0 +1,75 @@
+include "binds.kdl"
+
+// Spawn processes at startup.
+spawn-at-startup "noctalia"
+
+// Omit client-side decorations
+prefer-no-csd
+
+// Disable the "Important Hotkeys" pop-up at startup.
+hotkey-overlay {
+    skip-at-startup
+}
+
+input {
+    touchpad {
+        tap             // tap-to-click
+        natural-scroll  // Inverts the scrolling direction
+    }
+}
+
+// Path where screenshots are saved formatted with strftime.
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
+
+layout {
+    gaps 7
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    border {
+        width 1
+        active-color "#7fc8ff"
+        inactive-color "#363646"
+        urgent-color "#9b0000"
+    }
+
+    focus-ring {
+        width 2
+    }
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+debug {
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}
+
