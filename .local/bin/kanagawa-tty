@@ -1,0 +1,25 @@
+#!/bin/sh
+# Kanagawabones Palette for the Linux TTY Console
+
+# Normal colors (0-7)
+printf '\033]P01F1F28' # 0: Black
+printf '\033]P1E46A78' # 1: Red
+printf '\033]P298BC6D' # 2: Green
+printf '\033]P3E5C283' # 3: Yellow
+printf '\033]P47EB3C9' # 4: Blue
+printf '\033]P5957FB8' # 5: Magenta
+printf '\033]P67EB3C9' # 6: Cyan
+printf '\033]P7DDD8BB' # 7: White
+
+# Bright Colors (8-F)
+printf '\033]P83C3C51' # 8: Bright Black
+printf '\033]P9EC818C' # 9: Bright Red
+printf '\033]PA9EC967' # A: Bright Green
+printf '\033]PBF1C982' # B: Bright Yellow
+printf '\033]PC7BC2DF' # C: Bright Blue
+printf '\033]PDA98FD2' # D: Bright Magenta
+printf '\033]PE7BC2DF' # E: Bright Cyan
+printf '\033]PFA8A48D' # F: Bright White
+
+# Clear the screen to refresh the buffer with the new colors
+printf '\033c'
