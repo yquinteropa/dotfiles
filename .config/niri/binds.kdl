@@ -51,14 +51,30 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left ; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
+    Mod+S       { screenshot        show-pointer=false; } // Interactive screenshot UI
+    Mod+Ctrl+S  { screenshot-window show-pointer=false; }
+    Mod+F1      { screenshot-screen show-pointer=false; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+    Mod+MouseLeft       cooldown-ms=150 { focus-column-left ; }
+    Mod+MouseRight      cooldown-ms=150 { focus-column-right; }
+    Mod+MouseMiddle     cooldown-ms=700 { maximize-column; }
+
     Mod+O         repeat=false  { toggle-overview; }
     Mod+BackSpace repeat=false  { close-window   ; }
 
     // Core Noctalia binds
-    Mod+S         repeat=false  { spawn-sh "noctalia msg panel-toggle session"  ; }   
+    Mod+Q         repeat=false  { spawn-sh "noctalia msg panel-toggle session"  ; }   
     Mod+Space     repeat=false  { spawn-sh "noctalia msg panel-toggle launcher" ; }
     Mod+W         repeat=false  { spawn-sh "noctalia msg panel-toggle wallpaper"; }   
     Mod+Semicolon repeat=false  { spawn-sh "noctalia msg panel-toggle control-center"; }   
+
+    Mod+Return              { spawn "kitty"; }
+    Mod+B                   { spawn "firefox"; }
+    Mod+P                   { spawn "zathura"; }
+    Mod+N                   { spawn "obsidian"; }
+    Mod+E                   { spawn-sh "kitty yazi"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume    { spawn-sh "noctalia msg volume-up"; }
@@ -66,9 +82,4 @@ binds {
     XF86AudioMute           { spawn-sh "noctalia msg volume-mute"; }
     XF86MonBrightnessUp     { spawn-sh "noctalia msg brightness-up"; }
     XF86MonBrightnessDown   { spawn-sh "noctalia msg brightness-down"; }
-
-    Mod+Return              { spawn "kitty"; }
-    Mod+B                   { spawn "firefox"; }
-    Mod+N                   { spawn "obsidian"; }
-    Mod+E                   { spawn-sh "kitty yazi"; }
 }
