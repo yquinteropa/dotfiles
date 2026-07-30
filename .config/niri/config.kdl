@@ -21,6 +21,11 @@ input {
 // Path where screenshots are saved formatted with strftime.
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
 layout {
     gaps 7
 
@@ -40,7 +45,7 @@ layout {
 
     border {
         width 1
-        active-color "#7fc8ff"
+        active-color "#7FB4CA"
         inactive-color "#363646"
         urgent-color "#9b0000"
     }
@@ -66,6 +71,13 @@ window-rule {
 layer-rule {
     match namespace="^noctalia-backdrop"
     place-within-backdrop true
+}
+
+window-rule {
+    match title="terminal filechooser"
+    open-floating true
+    default-column-width { proportion 0.90; }
+    default-window-height { fixed 600; }
 }
 
 debug {
