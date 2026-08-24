@@ -1,5 +1,6 @@
 {
   "cssTheme": "Kanagawa",
   "monospaceFontFamily": "FiraCode Nerd Font Mono",
-  "textFontFamily": ""
+  "textFontFamily": "",
+  "theme": "obsidian"
 }
