@@ -1,0 +1,25 @@
+[opener]
+text_editor = [
+    { run = "nvim %s", block = true }
+]
+
+pdf_viewer = [
+    { run = "zathura %s", orphan = true }
+]
+
+video_player = [
+    { run = "mpv %s", orphan = true }
+]
+
+image_viewer = [
+    { run = "swayimg -v %s", orphan = true }
+]
+
+[open]
+rules = [
+    { mime = "text/*", use = "text_editor" }, 
+    { mime = "video/*", use = "video_player" },
+    { mime = "application/pdf" , use = "pdf_viewer" },
+    { mime = "image/*", use = "image_viewer"}
+]
+    
