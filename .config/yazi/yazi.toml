@@ -15,11 +15,17 @@ image_viewer = [
     { run = "swayimg -v %s", orphan = true }
 ]
 
+libreoffice = [
+    { run = "libreoffice %s", orphan = true }
+]
+
 [open]
 rules = [
-    { mime = "text/*", use = "text_editor" }, 
+    { mime = "text/*", use = "text_editor" },
     { mime = "video/*", use = "video_player" },
     { mime = "application/pdf" , use = "pdf_viewer" },
-    { mime = "image/*", use = "image_viewer"}
+    { mime = "image/*", use = "image_viewer"},
+    { mime = "application/oasis.opendocument.*", use = "libreoffice" },
+    { mime = "application/openxmlformats-officedocument.*", use = "libreoffice" }
 ]
     
