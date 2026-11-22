@@ -11,9 +11,9 @@ binds {
     Alt+K       { move-window-up-or-to-workspace-up; }
     Alt+L       { move-column-right; }
 
-    Mod+R       { switch-preset-window-height; }
-    Mod+V       { switch-preset-column-width; }
-    Mod+Ctrl+R  { reset-window-height; }
+    Mod+Z       { switch-preset-window-height; }
+    Mod+X       { switch-preset-column-width; }
+    Mod+R       { reset-window-height; }
 
     Mod+M       { maximize-column; }
     Mod+Alt+M   { fullscreen-window; }
@@ -21,10 +21,10 @@ binds {
     Mod+F       { toggle-window-floating; }
     Mod+Tab     { switch-focus-between-floating-and-tiling; }
 
-    Alt+Left    { set-column-width  "-10%"; }
-    Alt+Right   { set-column-width  "+10%"; }
-    Alt+Up      { set-window-height "-10%"; }
-    Alt+Down    { set-window-height "+10%"; }
+    Mod+Alt+Left    { set-column-width  "-10%"; }
+    Mod+Alt+Right   { set-column-width  "+10%"; }
+    Mod+Alt+Up      { set-window-height "-10%"; }
+    Mod+Alt+Down    { set-window-height "+10%"; }
 
     Mod+1       { focus-workspace 1 ; }
     Mod+2       { focus-workspace 2 ; }
@@ -37,8 +37,8 @@ binds {
     Mod+Ctrl+4  { move-column-to-workspace 4; }
     Mod+Ctrl+5  { move-column-to-workspace 5; }
 
-    Mod+T       { toggle-column-tabbed-display; }
     Mod+C       { center-column; }
+    Mod+Ctrl+T  { toggle-column-tabbed-display; }
     Mod+Ctrl+C  { center-visible-columns; }
     Mod+Ctrl+E  { quit; }
     Mod+Ctrl+H  { show-hotkey-overlay; }
@@ -53,10 +53,10 @@ binds {
 
     Mod+S       { screenshot        show-pointer=false; } // Interactive screenshot UI
     Mod+Ctrl+S  { screenshot-window show-pointer=false; }
-    Mod+F1      { screenshot-screen show-pointer=false; }
+    Print       { screenshot-screen show-pointer=false; }
 
-    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown  { focus-workspace-down; }
+    Mod+WheelScrollUp    { focus-workspace-up; }
     Mod+MouseLeft       cooldown-ms=150 { focus-column-left ; }
     Mod+MouseRight      cooldown-ms=150 { focus-column-right; }
     Mod+MouseMiddle     cooldown-ms=700 { maximize-column; }
@@ -70,16 +70,25 @@ binds {
     Mod+W         repeat=false  { spawn-sh "noctalia msg panel-toggle wallpaper"; }   
     Mod+Semicolon repeat=false  { spawn-sh "noctalia msg panel-toggle control-center"; }   
 
-    Mod+Return              { spawn "kitty"; }
-    Mod+B                   { spawn "firefox"; }
-    Mod+P                   { spawn "zathura"; }
-    Mod+N                   { spawn "obsidian"; }
-    Mod+E                   { spawn-sh "kitty yazi"; }
+    Mod+Return { spawn "kitty"; }
+    Mod+A      { spawn "anki"; }
+    Mod+B      { spawn "firefox"; }
+    Mod+P      { spawn "zathura"; }
+    Mod+N      { spawn "obsidian"; }
+    Mod+E      { spawn-sh "kitty yazi"; }
 
     // Audio & Brightness
-    XF86AudioRaiseVolume    { spawn-sh "noctalia msg volume-up"; }
-    XF86AudioLowerVolume    { spawn-sh "noctalia msg volume-down"; }
-    XF86AudioMute           { spawn-sh "noctalia msg volume-mute"; }
-    XF86MonBrightnessUp     { spawn-sh "noctalia msg brightness-up"; }
-    XF86MonBrightnessDown   { spawn-sh "noctalia msg brightness-down"; }
+    XF86AudioRaiseVolume   allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume   allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute          allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp    allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown  allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
+    XF86AudioMicMute       allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
+
+    F3 allow-when-locked=true { spawn-sh "noctalia msg brightness-down"; }
+    F4 allow-when-locked=true { spawn-sh "noctalia msg brightness-up"; }
+    F5 allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    F6 allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
+    F7 allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
+    F8 allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
 }
